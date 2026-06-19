@@ -142,7 +142,7 @@ try {
 
     // Recipients
     $mail->setFrom('jarren@goldmarkdigital.com', 'Amigos Plumbing Website');
-    $mail->addAddress('amigosplumbingdraincleaninginc@gmail.com');
+    $mail->addAddress('jesse@amigosplumbinganddrain.com');
     $mail->addBCC('jarren@goldmarkdigital.com');
     $mail->addReplyTo($email, $name);
 
