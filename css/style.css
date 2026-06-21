@@ -18044,7 +18044,31 @@ h3 + .card-custom-group-wrap {
   font-weight: 700;
   letter-spacing: 0.5px;
   padding: 18px 20px;
+  white-space: nowrap;
   transition: filter 0.15s;
+}
+@media (max-width: 480px) {
+  .sticky-call-bar a {
+    font-size: 14px;
+    gap: 6px;
+    padding: 16px 10px;
+    letter-spacing: 0;
+  }
+  .sticky-call-bar svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+@media (max-width: 360px) {
+  .sticky-call-bar a {
+    font-size: 13px;
+    gap: 5px;
+    padding: 14px 8px;
+  }
+  .sticky-call-bar svg {
+    width: 15px;
+    height: 15px;
+  }
 }
 .sticky-call-bar .sticky-btn--text {
   background-color: #1a8a3e;
