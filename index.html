@@ -179,8 +179,6 @@ a:hover{color:#1B4B8A;}
 
 body{padding-bottom:54px!important;}
 .ui-to-top{display:none!important;}
-#page-loader{background:#0B2D5E!important;}
-.cssload-speeding-wheel{border-color:#29ABE2 transparent transparent!important;}
 
 /* Hero */
 .hero-split{
@@ -435,11 +433,6 @@ select.form-input,
     </div>
   </nav>
 
-  <div id="page-loader">
-    <div class="cssload-container">
-      <div class="cssload-speeding-wheel"></div>
-    </div>
-  </div>
 
   <!-- Page -->
   <div class="page">
@@ -455,7 +448,7 @@ select.form-input,
           <div class="col-lg-4 order-2 order-lg-1">
             <div class="hero-form-floating">
               <h5 class="heading-decorated">Get a Free Estimate</h5>
-              <form class="rd-mailform rd-mailform_style-1" action="send-mail.php" method="POST" id="hero-form">
+              <form class="rd-mailform rd-mailform_style-1" action="#" method="POST" id="hero-form">
                 <div class="form-wrap">
                   <input class="form-input" type="text" name="name" placeholder="Your Name" required>
                 </div>
@@ -829,7 +822,7 @@ select.form-input,
             <!-- Get a Quote Form -->
             <div style="background:#fff;padding:36px;border-radius:10px;box-shadow:0 6px 32px rgba(11,45,94,.10);">
               <h4 class="heading-decorated" style="margin-bottom:24px;">Get a Free Quote</h4>
-              <form class="rd-mailform rd-mailform_style-1" action="send-mail.php" method="POST" id="quote-form">
+              <form class="rd-mailform rd-mailform_style-1" action="#" method="POST" id="quote-form">
 
                 <div id="form-success" style="display:none;" class="alert alert-success">
                   Your message was sent! We'll be in touch soon.
@@ -949,16 +942,36 @@ select.form-input,
         <div class="row" style="margin-top:2rem;">
           <div class="col-12">
             <h6 style="color:#29ABE2!important;font-weight:700;">Service Area Map</h6>
-            <div style="overflow:hidden;border-radius:6px;line-height:0;">
-              <iframe
-                src="https://maps.google.com/maps?q=sacramento,+ca&z=10&output=embed"
-                width="100%"
-                height="280"
-                style="border:0;display:block;filter:invert(90%) hue-rotate(180deg) saturate(1.5) brightness(0.9);"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Amigos Plumbing Service Area Map"></iframe>
-            </div>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLcE=" crossorigin=""></script>
+            <div id="service-area-map" style="height:280px;border-radius:6px;"></div>
+            <script>
+              (function(){
+                var map = L.map('service-area-map', { zoomControl: true, scrollWheelZoom: false })
+                  .setView([38.5816, -121.4944], 9);
+
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+                  maxZoom: 19
+                }).addTo(map);
+
+                L.circle([38.5816, -121.4944], {
+                  radius: 48280,
+                  color: '#29ABE2',
+                  fillColor: '#29ABE2',
+                  fillOpacity: 0.12,
+                  weight: 2
+                }).addTo(map);
+
+                L.circleMarker([38.5816, -121.4944], {
+                  radius: 7,
+                  color: '#0B2D5E',
+                  fillColor: '#29ABE2',
+                  fillOpacity: 1,
+                  weight: 2
+                }).bindTooltip('Sacramento, CA', { permanent: true, direction: 'top', offset: [0, -8] }).addTo(map);
+              })();
+            </script>
           </div>
         </div>
 
@@ -1104,12 +1117,8 @@ select.form-input,
       e.preventDefault();
       var successId = form.id === 'hero-form' ? 'hero-form-success' : 'form-success';
       var success = document.getElementById(successId);
-      fetch('send-mail.php', { method:'POST', body: new FormData(form) })
-        .then(function(r){ return r.text(); })
-        .then(function(){
-          form.reset();
-          if(success){ success.style.display='block'; }
-        });
+      form.reset();
+      if(success){ success.style.display='block'; }
     });
   });
   </script>
