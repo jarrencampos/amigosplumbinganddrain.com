@@ -80,4 +80,66 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Spanish city pages -->
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/elk-grove-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/rancho-cordova-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/citrus-heights-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/carmichael-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/fair-oaks-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/orangevale-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/north-highlands-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/antelope-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/west-sacramento-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/roseville-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/davis-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosplumbinganddrain.com/es/woodland-plumber/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
