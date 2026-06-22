@@ -1,9 +1,6 @@
 # Custom error pages
 ErrorDocument 404 /404.html
 
-# Google Business Profile review shortlink
-Redirect 301 /review https://g.page/r/CRlG4z8P5ZLJEBM/review
-
 # Disable directory listing
 Options -Indexes
 
