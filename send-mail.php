@@ -20,8 +20,12 @@ $name     = htmlspecialchars(trim($_POST['name'] ?? ''));
 $email    = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
 $phone    = htmlspecialchars(trim($_POST['phone'] ?? ''));
 $zipcode  = htmlspecialchars(trim($_POST['zipcode'] ?? ''));
-$service  = htmlspecialchars(trim($_POST['service'] ?? ''));
-$message  = htmlspecialchars(trim($_POST['message'] ?? ''));
+$service      = htmlspecialchars(trim($_POST['service'] ?? ''));
+$message      = htmlspecialchars(trim($_POST['message'] ?? ''));
+$utm_source   = htmlspecialchars(trim($_POST['utm_source'] ?? ''));
+$utm_medium   = htmlspecialchars(trim($_POST['utm_medium'] ?? ''));
+$utm_campaign = htmlspecialchars(trim($_POST['utm_campaign'] ?? ''));
+$gclid        = htmlspecialchars(trim($_POST['gclid'] ?? ''));
 
 // Basic validation
 if (!$name || !$phone || !$service) {
@@ -84,6 +88,24 @@ $body = '
 
                         </td>
                     </tr>
+
+                    <!-- Ad Tracking -->
+                    ' . ($utm_source || $utm_medium || $utm_campaign || $gclid ? '
+                    <tr>
+                        <td style="padding: 0 40px 30px;">
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px;">
+                                        <p style="margin: 0 0 8px 0; color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Ad Tracking</p>
+                                        ' . ($utm_source   ? '<p style="margin:0 0 4px; color:#ffffff; font-size:13px;"><span style="color:#888;">Source:</span> ' . $utm_source . '</p>' : '') . '
+                                        ' . ($utm_medium   ? '<p style="margin:0 0 4px; color:#ffffff; font-size:13px;"><span style="color:#888;">Medium:</span> ' . $utm_medium . '</p>' : '') . '
+                                        ' . ($utm_campaign ? '<p style="margin:0 0 4px; color:#ffffff; font-size:13px;"><span style="color:#888;">Campaign:</span> ' . $utm_campaign . '</p>' : '') . '
+                                        ' . ($gclid        ? '<p style="margin:0; color:#ffffff; font-size:13px;"><span style="color:#888;">GCLID:</span> ' . $gclid . '</p>' : '') . '
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>' : '') . '
 
                     <!-- Footer -->
                     <tr>

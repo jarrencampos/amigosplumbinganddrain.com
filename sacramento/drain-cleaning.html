@@ -599,6 +599,10 @@
 
       <form id="heroForm" action="../send-mail.php" method="POST">
         <input type="hidden" name="source" value="sacramento-drain-cleaning">
+        <input type="hidden" name="utm_source" id="utm_source">
+        <input type="hidden" name="utm_medium" id="utm_medium">
+        <input type="hidden" name="utm_campaign" id="utm_campaign">
+        <input type="hidden" name="gclid" id="gclid">
         <div class="form-group">
           <input type="text" name="name" placeholder="Your name" required autocomplete="name">
         </div>
@@ -792,6 +796,17 @@
 </div>
 
 <script>
+  // Capture UTM params and GCLID from URL into all forms
+  (function() {
+    var p = new URLSearchParams(window.location.search);
+    var params = { utm_source: p.get('utm_source'), utm_medium: p.get('utm_medium'), utm_campaign: p.get('utm_campaign'), gclid: p.get('gclid') };
+    ['utm_source','utm_medium','utm_campaign','gclid'].forEach(function(k) {
+      if (!params[k]) return;
+      var el = document.getElementById(k); if (el) el.value = params[k];
+      var el2 = document.getElementById('exit_' + k); if (el2) el2.value = params[k];
+    });
+  })();
+
   document.getElementById('scrollToForm').addEventListener('click', function(e) {
     e.preventDefault();
     document.getElementById('heroForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -836,6 +851,10 @@
     <form id="exit-popup-form" action="../send-mail.php" method="POST">
       <input type="hidden" name="source" value="exit-intent-drain-cleaning">
       <input type="hidden" name="service" value="Drain Cleaning">
+      <input type="hidden" name="utm_source" id="exit_utm_source">
+      <input type="hidden" name="utm_medium" id="exit_utm_medium">
+      <input type="hidden" name="utm_campaign" id="exit_utm_campaign">
+      <input type="hidden" name="gclid" id="exit_gclid">
       <div style="margin-bottom:0.75rem;">
         <input type="text" name="name" placeholder="Your name" required style="width:100%; padding:0.75rem 1rem; border:1px solid #ddd; border-radius:6px; font-size:1rem; box-sizing:border-box;">
       </div>
