@@ -12,8 +12,8 @@ require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 
 // Gmail SMTP settings
-$gmailUser = 'jarren.campos.dev@gmail.com';
-$gmailAppPassword = 'dwkl vdni cwvc xdjk'; // Replace with App Password from Google Account
+$gmailUser = 'amigosplumbingdraincleaninginc@gmail.com';
+$gmailAppPassword = 'mruw xizi jmjo wqdr';
 
 // Get submitted form fields (sanitized)
 $name     = htmlspecialchars(trim($_POST['name'] ?? ''));
