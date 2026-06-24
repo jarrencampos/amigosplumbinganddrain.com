@@ -55,19 +55,9 @@ $body = '
                             <!-- Name -->
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">
                                 <tr>
-                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #4a90d9;">
+                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #0B2D5E;">
                                         <p style="margin: 0 0 5px 0; color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Name</p>
                                         <p style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 500;">' . $name . '</p>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <!-- Email -->
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">
-                                <tr>
-                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #4a90d9;">
-                                        <p style="margin: 0 0 5px 0; color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Email</p>
-                                        <p style="margin: 0; color: #4a90d9; font-size: 16px;"><a href="mailto:' . $email . '" style="color: #4a90d9; text-decoration: none;">' . $email . '</a></p>
                                     </td>
                                 </tr>
                             </table>
@@ -75,19 +65,9 @@ $body = '
                             <!-- Phone -->
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">
                                 <tr>
-                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #4a90d9;">
+                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #0B2D5E;">
                                         <p style="margin: 0 0 5px 0; color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Phone</p>
                                         <p style="margin: 0; color: #ffffff; font-size: 16px;"><a href="tel:' . $phone . '" style="color: #ffffff; text-decoration: none;">' . $phone . '</a></p>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <!-- Zip Code -->
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">
-                                <tr>
-                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #4a90d9;">
-                                        <p style="margin: 0 0 5px 0; color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Zip Code</p>
-                                        <p style="margin: 0; color: #ffffff; font-size: 16px;">' . $zipcode . '</p>
                                     </td>
                                 </tr>
                             </table>
@@ -95,7 +75,7 @@ $body = '
                             <!-- Service Requested -->
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">
                                 <tr>
-                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #4a90d9;">
+                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #0B2D5E;">
                                         <p style="margin: 0 0 5px 0; color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Service Requested</p>
                                         <p style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 500;">' . $service . '</p>
                                     </td>
@@ -105,7 +85,7 @@ $body = '
                             <!-- Message -->
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
                                 <tr>
-                                    <td style="padding: 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #4a90d9;">
+                                    <td style="padding: 20px; background-color: #111111; border-radius: 8px; border-left: 4px solid #0B2D5E;">
                                         <p style="margin: 0 0 10px 0; color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Message</p>
                                         <p style="margin: 0; color: #ffffff; font-size: 15px; line-height: 1.6;">' . nl2br($message) . '</p>
                                     </td>
@@ -148,7 +128,8 @@ try {
 
     // Content
     $mail->isHTML(true);
-    $mail->Subject = '! New Plumbing Quote Request — ' . $service . ' !';
+    $mail->CharSet = 'UTF-8';
+    $mail->Subject = '! New Plumbing Quote Request - ' . $service . ' !';
     $mail->Body = $body;
 
     $mail->send();
