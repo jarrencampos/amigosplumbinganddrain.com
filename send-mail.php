@@ -141,10 +141,10 @@ try {
     $mail->Port = 587;
 
     // Recipients
-    $mail->setFrom('jarren@goldmarkdigital.com', 'Amigos Plumbing Website');
+    $mail->setFrom($gmailUser, 'Amigos Plumbing Website');
     $mail->addAddress('jesse@amigosplumbinganddrain.com');
     $mail->addBCC('jarren@goldmarkdigital.com');
-    $mail->addReplyTo($email, $name);
+    if ($email) { $mail->addReplyTo($email, $name); }
 
     // Content
     $mail->isHTML(true);
