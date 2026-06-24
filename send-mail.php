@@ -86,6 +86,17 @@ $body = '
                                 </tr>
                             </table>
 
+                            ' . ($message ? '
+                            <!-- Message -->
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 15px 20px; background-color: #111111; border-radius: 8px;">
+                                        <p style="margin: 0 0 5px 0; color: #888888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Message</p>
+                                        <p style="margin: 0; color: #ffffff; font-size: 15px; line-height: 1.6;">' . nl2br($message) . '</p>
+                                    </td>
+                                </tr>
+                            </table>' : '') . '
+
                         </td>
                     </tr>
 
