@@ -942,7 +942,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- Emergency -->
         <a class="svc-tile" href="/sacramento/emergency-plumbing" style="text-decoration:none;">
-          <div class="svc-tile__photo" style="background-image:url('images/emergency.jpeg');background-position:center center;"></div>
+          <div class="svc-tile__photo" style="background-image:url('images/plumber-sacramento.jpg');background-position:right center;"></div>
           <div class="svc-tile__overlay"></div>
           <div class="svc-tile__icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
@@ -1231,75 +1231,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         </div>
 
-        <div class="row" style="margin-top:2rem;">
-          <div class="col-12">
-            <h6 style="color:#29ABE2!important;font-weight:700;">Service Area Map</h6>
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-            <style>
-              #service-area-map { border:2px solid #29ABE2; box-shadow:0 0 24px rgba(41,171,226,.18); }
-              .map-pin { width:16px;height:16px;border-radius:50%;background:#29ABE2;border:3px solid #0B2D5E;box-shadow:0 0 0 3px rgba(41,171,226,.35);animation:mapPulse 2s ease-out infinite; }
-              @keyframes mapPulse{0%{box-shadow:0 0 0 0 rgba(41,171,226,.6)}70%{box-shadow:0 0 0 14px rgba(41,171,226,0)}100%{box-shadow:0 0 0 0 rgba(41,171,226,0)}}
-              .city-dot { width:8px;height:8px;border-radius:50%;background:#0B2D5E;border:2px solid #29ABE2; }
-              .leaflet-tooltip.map-label { background:#0B2D5E;border:1px solid #29ABE2;color:#fff;font-size:.7rem;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap;box-shadow:none; }
-              .leaflet-tooltip.map-label::before { border-top-color:#29ABE2; }
-              .leaflet-tooltip.center-label { background:#0d1a2e;border:1.5px solid #29ABE2;color:#29ABE2;font-size:.75rem;font-weight:800;padding:3px 10px;border-radius:4px;letter-spacing:.04em;box-shadow:0 2px 10px rgba(41,171,226,.3); }
-              .leaflet-tooltip.center-label::before { border-top-color:#29ABE2; }
-            </style>
-            <div id="service-area-map" style="height:340px;border-radius:8px;"></div>
-            <script>
-              (function(){
-                var map = L.map('service-area-map', { zoomControl: true, scrollWheelZoom: false, attributionControl: false })
-                  .setView([38.5816, -121.4944], 9);
-
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19 }).addTo(map);
-
-                L.circle([38.5816, -121.4944], {
-                  radius: 48280,
-                  color: '#29ABE2',
-                  fillColor: '#0B2D5E',
-                  fillOpacity: 0.28,
-                  weight: 2.5,
-                  dashArray: '6 4'
-                }).addTo(map);
-
-                var cities = [
-                  { name:'Elk Grove',       ll:[38.4088,-121.3716] },
-                  { name:'Rancho Cordova',  ll:[38.5891,-121.3027] },
-                  { name:'Folsom',          ll:[38.6779,-121.1761] },
-                  { name:'Roseville',       ll:[38.7521,-121.2880] },
-                  { name:'Rocklin',         ll:[38.7907,-121.2357] },
-                  { name:'Lincoln',         ll:[38.8916,-121.2933] },
-                  { name:'Citrus Heights',  ll:[38.7071,-121.2810] },
-                  { name:'Antelope',        ll:[38.7157,-121.3613] },
-                  { name:'North Highlands', ll:[38.6602,-121.3749] },
-                  { name:'Carmichael',      ll:[38.6285,-121.3285] },
-                  { name:'Fair Oaks',       ll:[38.6496,-121.2727] },
-                  { name:'Orangevale',      ll:[38.6763,-121.2271] },
-                  { name:'Granite Bay',     ll:[38.7566,-121.1730] },
-                  { name:'West Sacramento', ll:[38.5804,-121.5318] },
-                  { name:'Davis',           ll:[38.5449,-121.7405] },
-                  { name:'Woodland',        ll:[38.6785,-121.7733] },
-                  { name:'Natomas',         ll:[38.6393,-121.5024] },
-                  { name:'Galt',            ll:[38.2546,-121.2996] },
-                ];
-
-                cities.forEach(function(c){
-                  L.marker(c.ll, { icon: L.divIcon({ className:'', html:'<div class="city-dot"></div>', iconSize:[8,8], iconAnchor:[4,4] }) })
-                    .bindTooltip(c.name, { permanent:false, direction:'top', offset:[0,-6], className:'map-label' })
-                    .addTo(map);
-                });
-
-                L.marker([38.5816,-121.4944], { icon: L.divIcon({ className:'', html:'<div class="map-pin"></div>', iconSize:[16,16], iconAnchor:[8,8] }) })
-                  .bindTooltip('Amigos Plumbing &amp; Drain<br>Sacramento, CA', { permanent:true, direction:'top', offset:[0,-10], className:'center-label' })
-                  .addTo(map);
-              })();
-            </script>
-          </div>
-        </div>
-
       </div>
     </section>
+
+    <!-- Google Maps Full Width -->
+    <div style="line-height:0;display:block;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.118649501198!2d-121.4146353238706!3d38.489137171814065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9a7e1eea89a47f%3A0xc992e50f3fe34619!2sAmigos%20Plumbing%20and%20Drain%20Cleaning!5e1!3m2!1sen!2sus!4v1782803156055!5m2!1sen!2sus" width="100%" height="400" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
 
     <!-- Footer -->
     <footer class="footer-corporate bg-gray-darkest" style="padding:1rem 2rem 2.75rem;">
