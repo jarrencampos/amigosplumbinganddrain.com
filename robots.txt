@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /resources/
+Disallow: /review/
+Disallow: /booking-success.html
+
+User-agent: AhrefsBot
+Allow: /
+
+Sitemap: https://amigosplumbinganddrain.com/sitemap.xml
