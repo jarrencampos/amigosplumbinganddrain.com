@@ -98,14 +98,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .emergency-card .card-cta { display:inline-flex; align-items:center; gap:0.35rem; margin-top:1.1rem; color:var(--blue); font-weight:600; font-size:0.88rem; text-decoration:none; }
   .emergency-card .card-cta:hover { text-decoration:underline; }
 
-  /* ── Brands section ── */
-  .brands-section { background:var(--light); padding:4rem 1.25rem; }
-  .brands-section .section-title { color:var(--navy); }
-  .brands-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:1rem; margin-top:2rem; }
-  .brand-card { background:var(--white); border:2px solid #e2eaf5; border-radius:10px; padding:1.1rem 1rem; text-align:center; transition:border-color 0.2s,box-shadow 0.2s; }
-  .brand-card:hover { border-color:var(--blue); box-shadow:0 4px 16px rgba(41,171,226,0.15); }
-  .brand-name { font-weight:700; font-size:0.95rem; color:var(--navy); display:block; margin-bottom:0.2rem; }
-  .brand-type { font-size:0.75rem; color:var(--muted); }
+  /* ── Brand scroller ── */
+  .brand-scroller { background:var(--white); padding:2.5rem 0 2rem; border-bottom:2px solid #e8eef6; overflow:hidden; }
+  .brand-scroller-header { text-align:center; padding:0 1.25rem; margin-bottom:1.75rem; }
+  .brand-scroller-header h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(1.6rem,3vw,2.2rem); color:var(--navy); letter-spacing:0.03em; margin-bottom:0.35rem; }
+  .brand-scroller-header h2 span { color:var(--blue); }
+  .brand-scroller-header p { font-size:0.9rem; color:var(--muted); max-width:620px; margin:0 auto; }
+  .brand-track-wrap { overflow:hidden; width:100%; }
+  .brand-track { display:flex; gap:1.25rem; width:max-content; animation:scroll-brands 36s linear infinite; padding:0.25rem 0; }
+  .brand-track:hover { animation-play-state:paused; }
+  .brand-item { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.25rem; background:var(--white); border:1.5px solid #e2eaf5; border-radius:10px; padding:0.9rem 1.4rem; min-width:148px; flex-shrink:0; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s; }
+  .brand-item:hover { border-color:var(--blue); box-shadow:0 4px 18px rgba(41,171,226,0.18); transform:translateY(-2px); }
+  .brand-item .b-name { font-weight:700; font-size:1rem; color:var(--navy); white-space:nowrap; letter-spacing:0.01em; }
+  .brand-item .b-type { font-size:0.72rem; color:var(--muted); white-space:nowrap; }
+  @keyframes scroll-brands { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
 
   /* ── Why grid ── */
   .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
@@ -287,6 +293,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
+<!-- ── Brand Logo Scroller ── -->
+<section class="brand-scroller">
+  <div class="brand-scroller-header">
+    <h2>Brands We <span>Service &amp; Repair</span></h2>
+    <p>We work on all major water heater brands — tank and tankless, gas and electric. If you don't see your brand below, call us anyway. If it's a water heater, we can work on it.</p>
+  </div>
+  <div class="brand-track-wrap">
+    <div class="brand-track" aria-hidden="true">
+      <div class="brand-item"><span class="b-name">Rheem</span><span class="b-type">Tank &amp; Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Bradford White</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">A.O. Smith</span><span class="b-type">Tank &amp; Tankless</span></div>
+      <div class="brand-item"><span class="b-name">State</span><span class="b-type">Tank &amp; Tankless</span></div>
+      <div class="brand-item"><span class="b-name">American</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">Navien</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Rinnai</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Noritz</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Takagi</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Bosch</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Ecosmart</span><span class="b-type">Electric Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Whirlpool</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">GE</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">Kenmore</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">Giant</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">Richmond</span><span class="b-type">Tank</span></div>
+      <!-- duplicate set for seamless loop -->
+      <div class="brand-item"><span class="b-name">Rheem</span><span class="b-type">Tank &amp; Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Bradford White</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">A.O. Smith</span><span class="b-type">Tank &amp; Tankless</span></div>
+      <div class="brand-item"><span class="b-name">State</span><span class="b-type">Tank &amp; Tankless</span></div>
+      <div class="brand-item"><span class="b-name">American</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">Navien</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Rinnai</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Noritz</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Takagi</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Bosch</span><span class="b-type">Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Ecosmart</span><span class="b-type">Electric Tankless</span></div>
+      <div class="brand-item"><span class="b-name">Whirlpool</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">GE</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">Kenmore</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">Giant</span><span class="b-type">Tank</span></div>
+      <div class="brand-item"><span class="b-name">Richmond</span><span class="b-type">Tank</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ── Common Repair Problems ── -->
 <section class="section">
   <div class="section-inner">
@@ -366,80 +417,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ── Brands We Service ── -->
-<section class="brands-section">
-  <div class="section-inner">
-    <h2 class="section-title">Brands We <span>Service &amp; Repair</span></h2>
-    <p class="section-sub">We work on all major water heater brands — tank and tankless, gas and electric. If you don't see your brand below, call us anyway. If it's a water heater, we can work on it.</p>
-    <div class="brands-grid">
-      <div class="brand-card">
-        <span class="brand-name">Rheem</span>
-        <span class="brand-type">Tank &amp; Tankless</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Bradford White</span>
-        <span class="brand-type">Tank</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">A.O. Smith</span>
-        <span class="brand-type">Tank &amp; Tankless</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">State</span>
-        <span class="brand-type">Tank &amp; Tankless</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">American</span>
-        <span class="brand-type">Tank</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Navien</span>
-        <span class="brand-type">Tankless</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Rinnai</span>
-        <span class="brand-type">Tankless</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Noritz</span>
-        <span class="brand-type">Tankless</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Takagi</span>
-        <span class="brand-type">Tankless</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Bosch</span>
-        <span class="brand-type">Tankless</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Ecosmart</span>
-        <span class="brand-type">Electric Tankless</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Whirlpool</span>
-        <span class="brand-type">Tank</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">GE</span>
-        <span class="brand-type">Tank</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Kenmore</span>
-        <span class="brand-type">Tank</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Giant</span>
-        <span class="brand-type">Tank</span>
-      </div>
-      <div class="brand-card">
-        <span class="brand-name">Richmond</span>
-        <span class="brand-type">Tank</span>
-      </div>
     </div>
   </div>
 </section>
