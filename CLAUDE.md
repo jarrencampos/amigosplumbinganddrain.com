@@ -233,6 +233,25 @@ onclick="gtag('event', 'phone_click', {event_category: 'phone_click', event_labe
 
 Label values used: `hero`, `mobile_menu`, `footer`, `sticky_bar`, `about_hero`, `about_cta_strip`, `about_final_cta`, `emergency_banner`
 
+### Google Ads Conversion Tracking
+
+Every page `<head>` must include the Google Ads tag + both phone conversion configs:
+
+```html
+<!-- Google Ads Conversion Tracking (AW-17963126216) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17963126216"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17963126216');
+  gtag('config', 'AW-17963126216/hnf4CNWW0sQcEMibvvVC', {'phone_conversion_number': '(916) 598-3162'});
+  gtag('config', 'AW-17963126216/qdGVCM_f-s8cEMibvvVC', {'phone_conversion_number': '(916) 598-3162'});
+</script>
+```
+
+Place this after the GA4 block and before `</head>`.
+
 ---
 
 ## File Structure
@@ -375,6 +394,16 @@ Loader JS — add before `</body>` (path to posts.json is always `/blog/posts.js
 
 **City name values must exactly match** what's in `posts.json` cities arrays:
 Sacramento, Elk Grove, Rancho Cordova, Roseville, Citrus Heights, Carmichael, Fair Oaks, Orangevale, Antelope, North Highlands, West Sacramento, Davis, Woodland
+
+---
+
+## Sitemap
+
+**Always update `/sitemap.xml` when adding a new page.** Add a `<url>` entry with:
+- `<loc>` — full canonical URL (e.g. `https://amigosplumbinganddrain.com/blog/[slug].html`)
+- `<lastmod>` — today's date in `YYYY-MM-DD` format
+- `<changefreq>weekly</changefreq>`
+- `<priority>` — use `0.8` for service/city pages, `0.6` for blog posts, `0.5` for utility pages
 
 ---
 
