@@ -13,8 +13,8 @@ This file is loaded automatically at the start of every Claude Code session. **C
 - **Address:** 7816 Rockhurst Way, Sacramento, CA 95828
 - **License:** CA Lic. #1150558
 - **Hours:** Mon–Sun, 24 Hours
-- **GTM ID:** GTM-N6VW9PMR
 - **GA4 ID:** G-NEXPPDH0B2
+- **Google Ads ID:** AW-17963126216
 
 ---
 
@@ -247,6 +247,7 @@ Every page `<head>` must include the Google Ads tag + both phone conversion conf
   gtag('config', 'AW-17963126216');
   gtag('config', 'AW-17963126216/hnf4CNWW0sQcEMibvvVC', {'phone_conversion_number': '(916) 598-3162'});
   gtag('config', 'AW-17963126216/qdGVCM_f-s8cEMibvvVC', {'phone_conversion_number': '(916) 598-3162'});
+  gtag('config', 'AW-17963126216/O71OCIGW-88cEMibvvVC', {'phone_conversion_number': '(916) 598-3162'});
 </script>
 ```
 
