@@ -175,14 +175,22 @@
   .hero-phone-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.65rem;
+    background: #ff2973;
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 0.03em;
+    text-decoration: none !important;
+    letter-spacing: 0.02em;
+    padding: 0.85rem 1.75rem;
+    border-radius: 50px;
+    box-shadow: 0 8px 24px rgba(255,41,115,0.35);
+    transition: transform 0.15s, background 0.2s;
   }
-  .hero-phone-link svg { color: var(--blue); }
+  .hero-phone-link:hover { background: #e0225f; transform: scale(1.03); }
+  .hero-phone-link svg { color: var(--white); flex-shrink: 0; }
+  .hero-phone-link .hero-phone-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .hero-phone-link .hero-phone-cta { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9; }
 
   /* ─── FORM CARD ─── */
   .form-card {
@@ -599,8 +607,11 @@
       <h1>Drain Cleaning in<br><span>Sacramento</span><br>You Can Count On</h1>
       <p class="hero-sub">Local, licensed plumbers ready today. We clear clogs fast, quote honestly, and fix it right the first time.</p>
       <a href="tel:+19165983162" class="hero-phone-link" onclick="gtag('event', 'phone_click', {event_category: 'phone_click', transport_type: 'beacon', event_label: 'drain_cleaning_hero'})">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        (916) 598-3162
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        <span class="hero-phone-text">
+          <span class="hero-phone-cta">Click to Call</span>
+          (916) 598-3162
+        </span>
       </a>
     </div>
 
